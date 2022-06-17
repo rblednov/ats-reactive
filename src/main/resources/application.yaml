@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+app:
+  rules:
+    deliveryLateRule:
+      statusIncrement: "VIP:1;PRESIDENT:2"
+    vip-increment: 1
+  security:
+    viewPassword: "{bcrypt}$2a$12$mucZnM6JgINrteQugc.hCOB/MTTjX.2I8XVMeTfoGEbbMAEe0Iiji"
+    internalPassword: "{bcrypt}$2a$12$mucZnM6JgINrteQugc.hCOB/MTTjX.2I8XVMeTfoGEbbMAEe0Iiji"
+
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/atsdb
+    username: ats_user
+    password: qwe123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml

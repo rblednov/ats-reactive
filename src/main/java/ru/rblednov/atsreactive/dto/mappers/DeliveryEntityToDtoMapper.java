@@ -1,0 +1,19 @@
+package ru.rblednov.atsreactive.dto.mappers;
+
+import ru.rblednov.ats.dto.DeliveryDTO;
+import ru.rblednov.ats.entities.Delivery;
+
+public class DeliveryEntityToDtoMapper {
+    public static DeliveryDTO map(Delivery delivery) {
+        return DeliveryDTO.builder()
+                .id(delivery.getId())
+                .customerType(delivery.getCustomerType())
+                .status(delivery.getStatus())
+                .expectedTime(delivery.getExpectedTime())
+                .distance(delivery.getDistance())
+                .riderRating(delivery.getRiderRating())
+                .foodTime(delivery.getFoodTime())
+                .rideTime(delivery.getRideTime())
+                .build();
+    }
+}

@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    jpa:
+      show-sql: true
+
+logging:
+  level:
+    ru.rblednov.ats: DEBUG
+
+management:
+  endpoints.web.exposure.include: "*"
+  endpoint.health.show-details: always

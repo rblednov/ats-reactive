@@ -1,0 +1,32 @@
+<configuration>
+    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook">
+        <delay>2000</delay>
+    </shutdownHook>
+    <springProfile name="prod">
+        <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="consoleAppender"/>
+        </root>
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="jsonLogger" additivity="false" level="INFO">
+            <appender-ref ref="consoleAppender"/>
+        </logger>
+    </springProfile>
+    <springProfile name="local">
+        <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>
+                    %yellow(%d{HH:mm:ss:SSS}) %green([%t]) %highlight(%-5level) %magenta(%logger{15}.%M) %msg %n
+                </pattern>
+                <charset>utf8</charset>
+            </encoder>
+        </appender>
+        <logger name="ru.rblednov.ats" level="DEBUG"/>
+        <root level="INFO">
+            <appender-ref ref="consoleAppender"/>
+        </root>
+    </springProfile>
+</configuration>
