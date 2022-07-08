@@ -2,7 +2,9 @@ package ru.rblednov.atsreactive.services;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
 import ru.rblednov.atsreactive.dto.TicketDTO;
@@ -16,6 +18,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
+@Import({TicketsServiceRxImpl.class})
 public class TicketsServiceRxImplTest {
     private static final int page = 0;
     private static final int size = 10;

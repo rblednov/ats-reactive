@@ -1,6 +1,6 @@
 package ru.rblednov.atsreactive.services.deliveries.store;
 
-import ru.rblednov.ats.dto.DeliveryDTO;
+import ru.rblednov.atsreactive.dto.DeliveryDTO;
 
 import java.util.Set;
 
