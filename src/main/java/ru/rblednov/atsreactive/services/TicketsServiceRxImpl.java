@@ -34,6 +34,7 @@ public class TicketsServiceRxImpl implements TicketsService {
                         tickets.stream()
                                 .map(TicketEntityToDtoMapper::map)
                                 .collect(Collectors.toList())
-                );
+                )
+                .doOnNext(Object::toString);
     }
 }

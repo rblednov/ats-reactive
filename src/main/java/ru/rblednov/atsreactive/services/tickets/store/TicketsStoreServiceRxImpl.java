@@ -30,7 +30,7 @@ public class TicketsStoreServiceRxImpl implements TicketsStoreService {
     @Override
     public Mono<List<Ticket>> getOpenedTickets(Integer page, Integer size) {
         /*try out how this will work also test with thread sleep*/
-        return Mono.empty()
+        return Mono.just("")
                 /*async logging?*/
                 .doOnNext(t -> log.info("going to getOpenedTickets"))
                 .publishOn(Schedulers.boundedElastic())
