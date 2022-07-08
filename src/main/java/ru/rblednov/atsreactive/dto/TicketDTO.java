@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class TicketsDTO {
+public class TicketDTO {
     private UUID id;
     private Integer level;
     private UUID deliveryId;

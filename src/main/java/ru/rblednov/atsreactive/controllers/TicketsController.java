@@ -14,7 +14,9 @@ public class TicketsController {
     @GetMapping("/tickets")
     public Mono<TicketsResponseDTO> getTickets(@RequestParam(value = "page", defaultValue = "0") Mono<Integer> page,
                                                @RequestParam(value = "size", defaultValue = "5") Mono<Integer> size) {
-        return Mono.zip(page, size, ticketsService.getTickets(page, size))
-                .map(t -> new TicketsResponseDTO(t.getT3(), t.getT1(), t.getT2()));
+        return Mono.zip(page, size)
+                .flatMap(t -> ticketsService.getTickets(t.getT1(), t.getT2())
+                        .map(ticketDTOS -> new TicketsResponseDTO(ticketDTOS, t.getT1(), t.getT2()))
+                );
     }
 }

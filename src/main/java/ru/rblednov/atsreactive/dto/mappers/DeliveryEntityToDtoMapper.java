@@ -1,7 +1,7 @@
 package ru.rblednov.atsreactive.dto.mappers;
 
-import ru.rblednov.ats.dto.DeliveryDTO;
-import ru.rblednov.ats.entities.Delivery;
+import ru.rblednov.atsreactive.dto.DeliveryDTO;
+import ru.rblednov.atsreactive.entities.Delivery;
 
 public class DeliveryEntityToDtoMapper {
     public static DeliveryDTO map(Delivery delivery) {

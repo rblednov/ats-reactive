@@ -1,11 +1,11 @@
 package ru.rblednov.atsreactive.dto.mappers;
 
-import ru.rblednov.ats.dto.TicketsDTO;
-import ru.rblednov.ats.entities.Ticket;
+import ru.rblednov.atsreactive.dto.TicketDTO;
+import ru.rblednov.atsreactive.entities.Ticket;
 
 public class TicketEntityToDtoMapper {
-    public static TicketsDTO map(Ticket ticket) {
-        return TicketsDTO.builder()
+    public static TicketDTO map(Ticket ticket) {
+        return TicketDTO.builder()
                 .id(ticket.getId())
                 .level(ticket.getLevel())
                 .deliveryId(ticket.getDeliveryId())

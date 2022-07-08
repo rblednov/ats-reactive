@@ -1,9 +1,9 @@
 package ru.rblednov.atsreactive.rules;
 
 import org.springframework.stereotype.Component;
-import ru.rblednov.ats.configuration.RulesConfig;
-import ru.rblednov.ats.dto.DeliveryDTO;
-import ru.rblednov.ats.entities.Delivery;
+import ru.rblednov.atsreactive.configuration.RulesConfig;
+import ru.rblednov.atsreactive.dto.DeliveryDTO;
+import ru.rblednov.atsreactive.entities.Delivery;
 
 import java.time.OffsetDateTime;
 

@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @ToString
 public class TicketsResponseDTO {
-    private List<TicketsDTO> tickets;
+    private List<TicketDTO> tickets;
     private Integer page;
     private Integer size;
 }

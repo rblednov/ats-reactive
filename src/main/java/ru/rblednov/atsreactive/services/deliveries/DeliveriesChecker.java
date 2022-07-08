@@ -1,7 +1,7 @@
 package ru.rblednov.atsreactive.services.deliveries;
 
-import ru.rblednov.ats.dto.DeliveryDTO;
-import ru.rblednov.ats.rules.TicketReport;
+import ru.rblednov.atsreactive.dto.DeliveryDTO;
+import ru.rblednov.atsreactive.rules.TicketReport;
 
 import java.util.Optional;
 
