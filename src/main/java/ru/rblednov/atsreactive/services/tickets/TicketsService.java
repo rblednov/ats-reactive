@@ -7,7 +7,7 @@ import ru.rblednov.atsreactive.rules.TicketReport;
 import java.util.List;
 
 public interface TicketsService {
-    void performReport(TicketReport report);
+    Mono<Void> performReport(TicketReport report);
 
     Mono<List<TicketDTO>> getTickets(Integer page, Integer size);
 }

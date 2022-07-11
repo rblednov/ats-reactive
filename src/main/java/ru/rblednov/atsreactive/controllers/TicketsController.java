@@ -22,9 +22,5 @@ public class TicketsController {
                                                @RequestParam(value = "size", defaultValue = "5") Integer size) {
         log.info("Received request to get tickets.");
         return ticketsService.getTickets(page, size).map(ticketDTOS -> new TicketsResponseDTO(ticketDTOS, page, size));
-//        return Mono.zip(page, size)
-//                .flatMap(t -> ticketsService.getTickets(t.getT1(), t.getT2())
-//                        .map(ticketDTOS -> new TicketsResponseDTO(ticketDTOS, t.getT1(), t.getT2()))
-//                );
     }
 }

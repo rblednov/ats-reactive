@@ -1,5 +1,6 @@
 package ru.rblednov.atsreactive.services;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import ru.rblednov.atsreactive.dto.TicketDTO;
@@ -11,7 +12,7 @@ import ru.rblednov.atsreactive.services.tickets.store.TicketsStoreService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Slf4j
 @Service
 public class TicketsServiceRxImpl implements TicketsService {
 

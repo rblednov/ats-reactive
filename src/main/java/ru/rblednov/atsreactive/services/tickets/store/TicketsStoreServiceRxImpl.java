@@ -30,11 +30,12 @@ public class TicketsStoreServiceRxImpl implements TicketsStoreService {
     @Override
     public Mono<List<Ticket>> getOpenedTickets(Integer page, Integer size) {
         /*try out how this will work also test with thread sleep*/
+
+        /*how to do it in a more common way?*/
         return Mono.just("")
                 /*async logging?*/
-                .doOnNext(t -> log.info("going to getOpenedTickets"))
                 .publishOn(Schedulers.boundedElastic())
-                .map(empty ->
-                        ticketsRepository.findAllByStatusIsOrderByLevelDesc(Ticket.Status.OPEN, PageRequest.of(page, size)));
+                .doOnNext(t -> log.info("going to getOpenedTickets"))
+                .map(empty -> ticketsRepository.findAllByStatusIsOrderByLevelDesc(Ticket.Status.OPEN, PageRequest.of(page, size)));
     }
 }
